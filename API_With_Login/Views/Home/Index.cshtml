@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form action="api/Numbers" method="get">
+        <div class="form-group">
+            <input type="number" name="num1" id="num1">
+            <label for="num1">Первое число</label>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="number" name="num2" id="num2">
+            <label for="num2">Второе число</label>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Отправить">
+        </div>
+        <br />
+        <div class="form-group">
+            <button asp-action="Logout" asp-controller="Account">Выйти</button>
+        </div>
+        <br />
+        <p style="font-weight: bold">(Вводить можно только целые числа)</p>
+    </form>
+</div>
