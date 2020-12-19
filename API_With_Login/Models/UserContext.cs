@@ -15,5 +15,9 @@ namespace API_With_Login.Models
         {
             Database.EnsureCreated();
         }
+        public UserContext()
+        {
+
+        }
     }
 }

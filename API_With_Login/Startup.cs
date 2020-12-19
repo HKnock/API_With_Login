@@ -16,6 +16,7 @@ namespace API_With_Login
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -26,8 +27,6 @@ namespace API_With_Login
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //string ConnectionUser = Configuration.GetConnectionString("UserConnection");
-            //string ConnectionNums = Configuration.GetConnectionString("NumsConnection");
             services.AddDbContext<NumbersContext>(opt => opt.UseInMemoryDatabase("Numbers"));
             services.AddDbContext<UserContext>(opt => opt.UseInMemoryDatabase("Users"));
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -39,7 +38,7 @@ namespace API_With_Login
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage();
 
